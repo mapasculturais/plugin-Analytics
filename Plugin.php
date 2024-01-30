@@ -21,7 +21,7 @@ class Plugin extends \MapasCulturais\Plugin
         
         $self = $this;
 
-        $app->hook("template(site.<<*>>.main-head):after", function () use ($self) {
+        $app->hook("template(<<*>>.<<*>>.main-head):after", function () use ($self) {
             $config = $self->config;
             $this->part('analytics',["config" => $config]);
         });
