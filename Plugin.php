@@ -22,7 +22,7 @@ class Plugin extends \MapasCulturais\Plugin
         $self = $this;
 
         // Analytics para o BaseV1
-        $app->hook("template(<<*>>.<<*>>.main-head):after", function () use ($self) {
+        $app->hook("template(<<*>>.<<*>>.main-head):end", function () use ($self) {
             $config = $self->config;
             if($config['analytics_key']){
             $this->part('analytics',["config" => $config]);
